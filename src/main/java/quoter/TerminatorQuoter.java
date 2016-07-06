@@ -5,6 +5,7 @@ import java.util.List;
 /**
  * Created by Jeka on 06/07/2016.
  */
+
 public class TerminatorQuoter implements Quoter {
     private List<String> messages;
 
