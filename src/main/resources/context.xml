@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <bean id="shakespearQuoter" class="quoter.ShakespearQuoter">
+        <property name="message" value="2 b || ! 2 b"/>
+    </bean>
+
+    <bean id="terminatorQuoter" class="quoter.TerminatorQuoter">
+        <property name="messages">
+            <list>
+                <value>I'll be back</value>
+                <value>Astalavista baby</value>
+            </list>
+        </property>
+    </bean>
+</beans>
