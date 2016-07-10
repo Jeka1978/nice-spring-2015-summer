@@ -1,5 +1,6 @@
 package quoter;
 
+import javax.annotation.PreDestroy;
 import java.util.List;
 
 /**
@@ -18,4 +19,23 @@ public class TerminatorQuoter implements Quoter {
     public void sayQuote() {
         messages.forEach(System.out::println);
     }
+
+    @PreDestroy
+    public void killAll() {
+        new Thread(() -> System.out.println("you are terminated")).start();
+
+    }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+

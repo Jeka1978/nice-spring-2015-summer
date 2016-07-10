@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <beans xmlns="http://www.springframework.org/schema/beans"
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd">
 
+    <import resource="infra.xml"/>
 
-    <bean class="quoter.InjectRandomIntAnnotationBeanPostProcessor"/>
-    <bean class="org.springframework.context.annotation.CommonAnnotationBeanPostProcessor"/>
 
     <bean id="robot" class="quoter.TalkingRobotImpl">
         <property name="quoters">
@@ -17,11 +17,26 @@
 
     </bean>
 
+    <context:property-placeholder location="classpath:application.properties,file:c:\\a.properties"
+                                  ignore-resource-not-found="true"/>
+
     <bean id="shakespearQuoter" class="quoter.ShakespearQuoter">
-        <property name="message" value="2 b || ! 2 b"/>
+        <property name="message" value="${shake}"/>
     </bean>
 
-    <bean id="terminatorQuoter" class="quoter.TerminatorQuoter">
+
+    <!--
+        <bean id="integer" class="quoter.IntegerFactory">
+
+        </bean>
+    -->
+    <bean id="integerFactory2" class="quoter.IntegerFactory2"/>
+    <bean id="integer" class="java.lang.Integer" factory-bean="integerFactory2" factory-method="getInt">
+
+    </bean>
+
+
+    <bean id="terminatorQuoter" scope="prototype" class="quoter.TerminatorQuoter">
         <property name="messages">
             <list>
                 <value>I'll be back</value>
@@ -33,12 +48,6 @@
     <bean id="quote" class="java.lang.String">
         <constructor-arg value="Come with me if you want to live"/>
     </bean>
-
-
-
-
-
-
 
 
 </beans>
