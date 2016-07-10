@@ -1,6 +1,10 @@
 package quoter;
 
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.stereotype.Component;
+
 import javax.annotation.PreDestroy;
+import java.util.Arrays;
 import java.util.List;
 
 /**
@@ -9,11 +13,15 @@ import java.util.List;
 
 @Transactional
 @Benchmark
+@Component
 public class TerminatorQuoter implements Quoter {
+
     private List<String> messages;
 
-    public void setMessages(List<String> messages) {
-        this.messages = messages;
+    @Value("${terminator}")
+    public void setMessages(String[] messages, @Value("${JAVA_HOME}") String java) {
+        System.out.println(java);
+        this.messages = Arrays.asList(messages);
     }
 
     public void sayQuote() {

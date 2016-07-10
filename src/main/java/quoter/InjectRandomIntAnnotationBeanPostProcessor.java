@@ -2,6 +2,9 @@ package quoter;
 
 import org.springframework.beans.BeansException;
 import org.springframework.beans.factory.config.BeanPostProcessor;
+import org.springframework.context.annotation.Lazy;
+import org.springframework.context.annotation.Scope;
+import org.springframework.stereotype.Component;
 import org.springframework.util.ReflectionUtils;
 
 import java.lang.reflect.Field;
@@ -10,6 +13,8 @@ import java.util.Random;
 /**
  * Created by Jeka on 06/07/2016.
  */
+@Component
+@Lazy
 public class InjectRandomIntAnnotationBeanPostProcessor implements BeanPostProcessor {
     @Override
     public Object postProcessBeforeInitialization(Object bean, String beanName) throws BeansException {

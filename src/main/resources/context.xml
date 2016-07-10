@@ -7,22 +7,11 @@
     <import resource="infra.xml"/>
 
 
-    <bean id="robot" class="quoter.TalkingRobotImpl">
-        <property name="quoters">
-            <list>
-                <ref bean="shakespearQuoter"/>
-                <ref bean="terminatorQuoter"/>
-            </list>
-        </property>
-
-    </bean>
 
     <context:property-placeholder location="classpath:application.properties,file:c:\\a.properties"
                                   ignore-resource-not-found="true"/>
 
-    <bean id="shakespearQuoter" class="quoter.ShakespearQuoter">
-        <property name="message" value="${shake}"/>
-    </bean>
+
 
 
     <!--
@@ -30,24 +19,6 @@
 
         </bean>
     -->
-    <bean id="integerFactory2" class="quoter.IntegerFactory2"/>
-    <bean id="integer" class="java.lang.Integer" factory-bean="integerFactory2" factory-method="getInt">
-
-    </bean>
-
-
-    <bean id="terminatorQuoter" scope="prototype" class="quoter.TerminatorQuoter">
-        <property name="messages">
-            <list>
-                <value>I'll be back</value>
-                <ref bean="quote"/>
-                <value>Astalavista baby</value>
-            </list>
-        </property>
-    </bean>
-    <bean id="quote" class="java.lang.String">
-        <constructor-arg value="Come with me if you want to live"/>
-    </bean>
 
 
 </beans>
