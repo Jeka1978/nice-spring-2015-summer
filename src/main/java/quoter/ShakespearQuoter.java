@@ -1,5 +1,6 @@
 package quoter;
 
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
 
@@ -7,6 +8,7 @@ import org.springframework.stereotype.Component;
  * Created by Jeka on 06/07/2016.
  */
 @Component
+@History
 public class ShakespearQuoter implements Quoter {
     @InjectRandomInt(min = 5, max = 8)
     private int repeat;
