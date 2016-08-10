@@ -1,11 +1,11 @@
 package qualifiers;
 
-import org.springframework.stereotype.Repository;
+import static qualifiers.DBType.MONGO;
 
 /**
  * Created by Jeka on 10/08/2016.
  */
-@Mongo
+@NiceRepo(MONGO)
 public class MongoNiceDao implements NiceDao {
     @Override
     public void save() {

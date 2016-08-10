@@ -5,14 +5,15 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Service;
 
+import static qualifiers.DBType.ORACLE;
+
 /**
  * Created by Jeka on 10/08/2016.
  */
 @Service
 public class BackupService {
 
-    @Autowired
-    @Oracle
+    @NiceRepo(ORACLE)
     private NiceDao niceDao;
 
     @SneakyThrows

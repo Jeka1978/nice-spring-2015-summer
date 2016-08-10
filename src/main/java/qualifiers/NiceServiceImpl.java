@@ -1,9 +1,10 @@
 package qualifiers;
 
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.scheduling.annotation.EnableScheduling;
 import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Service;
+
+import static qualifiers.DBType.MONGO;
 
 /**
  * Created by Jeka on 10/08/2016.
@@ -11,7 +12,7 @@ import org.springframework.stereotype.Service;
 @Service
 @EnableScheduling
 public class NiceServiceImpl implements NiceService {
-    @Mongo
+    @NiceRepo(MONGO)
     private NiceDao niceDao;
 
     @Override
