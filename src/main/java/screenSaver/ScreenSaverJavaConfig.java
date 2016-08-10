@@ -15,7 +15,17 @@ import java.util.Random;
 public class ScreenSaverJavaConfig {
 
     @Bean
-    @Scope(value = "prototype", proxyMode = ScopedProxyMode.TARGET_CLASS)
+    public FlyingFrame flyingFrame(){
+        return new FlyingFrame() {
+            @Override
+            protected Color getColorBean() {
+                return color();
+            }
+        };
+    }
+
+    @Bean
+    @Scope(value = "prototype")
     public Color color(){
         Random random = new Random();
         Color color = new Color(random.nextInt(255), random.nextInt(255), random.nextInt(255));
