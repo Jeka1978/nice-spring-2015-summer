@@ -8,6 +8,6 @@ import java.util.Random;
 public class DBUtils {
     public static int getMailCode() {
         Random random = new Random();
-        return random.nextInt(3);
+        return random.nextInt(3)+1;
     }
 }
