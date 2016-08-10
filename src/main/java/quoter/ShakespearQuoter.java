@@ -17,6 +17,7 @@ public class ShakespearQuoter implements Quoter {
     private String message;
 
     @Override
+    @Deprecated
     public void sayQuote() {
         for (int i = 0; i < repeat; i++) {
             System.out.println(message);
