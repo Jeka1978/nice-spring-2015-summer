@@ -2,6 +2,7 @@ package quoter;
 
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.context.annotation.PropertySource;
 import org.springframework.stereotype.Component;
 
 /**
@@ -9,6 +10,7 @@ import org.springframework.stereotype.Component;
  */
 @Component
 @History
+@PropertySource("classpath:application.properties")
 public class ShakespearQuoter implements Quoter {
     @InjectRandomInt(min = 5, max = 8)
     private int repeat;
