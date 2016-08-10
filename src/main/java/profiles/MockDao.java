@@ -7,7 +7,7 @@ import org.springframework.stereotype.Repository;
  * Created by Jeka on 10/08/2016.
  */
 @Repository
-@Profile("DEV")
+@Dev
 public class MockDao implements Dao {
     @Override
     public void save() {
