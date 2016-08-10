@@ -2,11 +2,13 @@ package profiles;
 
 import org.springframework.context.annotation.Condition;
 import org.springframework.context.annotation.ConditionContext;
+import org.springframework.context.annotation.EnableAspectJAutoProxy;
 import org.springframework.core.type.AnnotatedTypeMetadata;
 
 /**
  * Created by Jeka on 10/08/2016.
  */
+@EnableAspectJAutoProxy
 public class NonWindowsDetector implements Condition {
     @Override
     public boolean matches(ConditionContext conditionContext, AnnotatedTypeMetadata annotatedTypeMetadata) {
