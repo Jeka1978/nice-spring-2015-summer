@@ -1,9 +1,7 @@
 package screenSaver;
 
-import org.springframework.context.annotation.Bean;
-import org.springframework.context.annotation.Configuration;
-import org.springframework.context.annotation.Scope;
-import org.springframework.context.annotation.ScopedProxyMode;
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.context.annotation.*;
 
 import java.awt.*;
 import java.util.Random;
@@ -13,6 +11,10 @@ import java.util.Random;
  */
 @Configuration
 public class ScreenSaverJavaConfig {
+
+    @Value("${JAVA_HOME}")
+    private String javaHome;
+
 
     @Bean
     public FlyingFrame flyingFrame(){
@@ -27,6 +29,9 @@ public class ScreenSaverJavaConfig {
     @Bean
     @Scope(value = "prototype")
     public Color color(){
+        if (javaHome == null) {
+            return Color.BLACK;
+        }
         Random random = new Random();
         Color color = new Color(random.nextInt(255), random.nextInt(255), random.nextInt(255));
         return color;

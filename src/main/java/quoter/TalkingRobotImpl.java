@@ -23,7 +23,6 @@ public class TalkingRobotImpl implements TalkingRobot {
                                     "this is default quote")));
 
     @Autowired(required = false)
-    @Film
     public void setQuoters(List<Quoter> quoters) {
         for (Quoter quoter : quoters) {
             this.quoters.add(quoter);

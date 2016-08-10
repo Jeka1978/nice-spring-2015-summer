@@ -3,6 +3,7 @@ package neveruseswitch;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.scheduling.annotation.EnableScheduling;
 import org.springframework.scheduling.annotation.Scheduled;
+import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Service;
 
 import java.util.HashMap;
@@ -13,7 +14,7 @@ import java.util.Map;
  * Created by Jeka on 10/08/2016.
  */
 
-@Service
+@Component
 public class MailSender {
 
     private Map<Integer,MailGenerator> map = new HashMap<>();

@@ -15,7 +15,6 @@ import java.util.List;
 @Transactional
 @Benchmark
 @Component
-@Film
 public class TerminatorQuoter implements Quoter {
 
     private List<String> messages;

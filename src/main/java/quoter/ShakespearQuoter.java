@@ -9,7 +9,6 @@ import org.springframework.stereotype.Component;
  * Created by Jeka on 06/07/2016.
  */
 @Component
-@History
 @PropertySource("classpath:application.properties")
 public class ShakespearQuoter implements Quoter {
     @InjectRandomInt(min = 5, max = 8)
