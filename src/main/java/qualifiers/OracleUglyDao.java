@@ -5,7 +5,7 @@ import org.springframework.stereotype.Repository;
 /**
  * Created by Jeka on 10/08/2016.
  */
-@Repository
+@Oracle
 public class OracleUglyDao implements NiceDao {
     @Override
     public void save() throws InterruptedException {

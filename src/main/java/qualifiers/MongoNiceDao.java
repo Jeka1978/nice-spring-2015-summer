@@ -5,7 +5,7 @@ import org.springframework.stereotype.Repository;
 /**
  * Created by Jeka on 10/08/2016.
  */
-@Repository
+@Mongo
 public class MongoNiceDao implements NiceDao {
     @Override
     public void save() {

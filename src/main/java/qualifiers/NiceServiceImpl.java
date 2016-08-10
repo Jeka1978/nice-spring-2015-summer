@@ -1,6 +1,7 @@
 package qualifiers;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.scheduling.annotation.EnableScheduling;
 import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Service;
 
@@ -8,8 +9,9 @@ import org.springframework.stereotype.Service;
  * Created by Jeka on 10/08/2016.
  */
 @Service
+@EnableScheduling
 public class NiceServiceImpl implements NiceService {
-    @Autowired
+    @Mongo
     private NiceDao niceDao;
 
     @Override

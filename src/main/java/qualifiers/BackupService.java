@@ -12,6 +12,7 @@ import org.springframework.stereotype.Service;
 public class BackupService {
 
     @Autowired
+    @Oracle
     private NiceDao niceDao;
 
     @SneakyThrows
